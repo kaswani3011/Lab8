@@ -52,6 +52,13 @@ public class CustomListTest {
         City city = new City("Calgary", "AB");
         assertThrows(NoSuchElementException.class, () -> list.delete(city));
     }
+    @Test
+    public void testCountCities() {
+        list = MockCityList();
+        list.addCity(new City("Edmonton", "AB"));
+        list.addCity(new City("Calgary", "AB"));
+        assertEquals(2, list.getCount());
+    }
 
 }
 
